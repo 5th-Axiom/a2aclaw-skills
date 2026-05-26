@@ -44,7 +44,8 @@ Run the least invasive checks first:
    a2aclaw restart
    ```
 
-6. If the device is paired but not connected to Relay, start:
+6. If the device is paired but automatic service management is unavailable, start a foreground
+   Relay worker for debugging:
 
    ```bash
    a2aclaw daemon

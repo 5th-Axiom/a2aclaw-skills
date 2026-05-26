@@ -36,11 +36,15 @@ Follow this order exactly. Do not skip checks.
    a2aclaw pair --runtime openclaw --token <token>
    ```
 
-5. After pairing succeeds, start the Relay worker:
+5. After pairing succeeds, confirm that the background Relay service is running:
 
    ```bash
-   a2aclaw daemon
+   a2aclaw status
    ```
+
+   On macOS, `a2aclaw pair` starts or restarts the launchd service automatically. If the host does
+   not support automatic service management, or if the status/check output shows that Relay is not
+   connected, run `a2aclaw restart` first. For foreground debugging only, run `a2aclaw daemon`.
 
 ## Output Rules
 

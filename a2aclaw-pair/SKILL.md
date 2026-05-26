@@ -17,11 +17,17 @@ Follow this order exactly. Do not skip checks.
    npm install -g @a2aclaw/cli@latest
    ```
 
-2. Install or update the local Host Agent, OpenClaw adapter, and background service:
+2. Install or update the local Host Agent, OpenClaw adapter, and platform background service:
 
    ```bash
    a2aclaw install
    ```
+
+   Service managers are platform-specific:
+
+   - macOS: launchd
+   - Linux: pm2
+   - Windows: node-windows
 
 3. Verify OpenClaw readiness before pairing:
 
@@ -42,9 +48,9 @@ Follow this order exactly. Do not skip checks.
    a2aclaw status
    ```
 
-   On macOS, `a2aclaw pair` starts or restarts the launchd service automatically. If the host does
-   not support automatic service management, or if the status/check output shows that Relay is not
-   connected, run `a2aclaw restart` first. For foreground debugging only, run `a2aclaw daemon`.
+   `a2aclaw pair` starts or restarts the platform service automatically. If the status/check output
+   shows that Relay is not running, run `a2aclaw restart` first. For foreground debugging only, run
+   `a2aclaw daemon`.
 
 ## Output Rules
 
